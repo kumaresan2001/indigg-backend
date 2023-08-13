@@ -4,10 +4,11 @@ dotenv.config();
 import express from "express"; // "type": "module"
 import { MongoClient } from "mongodb";
 const app = express();
+import cors from "cors";
 app.use(express.json());
 import tournamentRouter from "./router/tournament.router.js";
 import participantRouter from "./router/participant.router.js";
-
+app.use(cors());
 app.use("/tournament", tournamentRouter);
 app.use("/participant", participantRouter);
 
