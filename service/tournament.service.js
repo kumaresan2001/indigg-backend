@@ -2,7 +2,7 @@ import { ObjectId } from "mongodb";
 import { client } from "../index.js";
 
 export async function posttournament(data) {
-  return await client.db("indigg").collection("tournament").insertOne({ data });
+  return await client.db("indigg").collection("tournament").insertOne(data);
 }
 
 export async function alltournament(query) {
